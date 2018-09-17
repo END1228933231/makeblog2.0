@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="__ADMIN__/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="__ADMIN__/css/login.css">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__ADMIN__/css/beyond.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="__ADMIN__/css/nav.css">
+
+    <title>后台登录—制造工作室</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <header>
+        <div class="navbar navStyle">
+            <div class="navbar-inner">
+                <div class="navbar-container">
+                    <!-- Navbar Barnd -->
+                    <div class="navbar-header pull-left">
+                        <a href="#" class="navbar-brand">
+                            <small>
+                                <img src="__ADMIN__/img/Logo.png" alt="">
+                            </small>
+                        </a>
+                        <span class="adminLogin">制造工作室后台&ensp;1.0</span>
+                    </div>
+                    <!-- /Navbar Barnd -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="loginForm" >
+            <form action="{:url('index')}" method="post" id="adminLogin">
+                <div class="logInput">
+                    <input type="text" name="username" placeholder="账号">
+                </div>
+
+                <div class="logInput">
+                    <input type="password" name="password" placeholder="密码">
+                </div>
+
+                <div class="checkNum">
+                    验证码：
+                    <input type="text" name="code" size="4">
+                    <img src="{:captcha_src()}" onclick="this.src='{:captcha_src()}?Math.random();'" alt="captcha" />
+                </div>
+
+                <div class="" style="clear:both;"></div>    
+
+                <div class="logBtn" style="margin-top:30px;">
+                    <button type="submit" >登录</button>
+                </div>
+                
+            </form>
+        </div>   
+    </main>
+
+    <footer>
+        {include file="common/footer" /}
+    </footer>
+
+    <script src="__JS__/jquery-3.3.1.min.js"></script>
+</body>
+</html>

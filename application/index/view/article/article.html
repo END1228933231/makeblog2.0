@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {include file="common/cssInfo" /}
+    <link rel="stylesheet" href="__CSS__/otherPage.css">
+
+    <!-- 网站ico -->
+    <!-- <link rel="icon" href="img/favicon.ico" /> -->
+    <title>{$confres.sitename}</title>
+</head>
+
+<body>
+    <header>
+        <!-- 导航栏 -->
+        {include file="common/nav" /}
+        <!-- END-导航栏 -->
+    </header>
+    <main>
+        <div class="container">
+            <div class="row cententTopMar">
+                <!-- 左侧文章内容栏 -->
+                <div class="leftArticle col-lg-8 col-md-8 col-sm-8">
+                    <h3>{$artres.title}</h3>
+                    <ul class="xqAuthor">
+                        <li>作者:
+                            <span>{$artres.author}</span>
+                        </li>
+                        <li>时间:
+                            <span>{$artres.time|date="Y-m-d",###}</span>
+                        </li>
+                        <li>浏览:
+                            <span>{$artres.click}</span>
+                        </li>
+                    </ul>
+                    <div class="articleCentent">
+                        {$artres.content}
+                    </div>
+                    <!-- END-articleCentent -->
+
+                    <!-- 底部上下篇 -->
+                    <!-- <ul class="lastNextActicle">
+                        <li class="lastNextList">
+                            <a href="">上一篇:
+                                <span>化能学院举行班主任工作技能培训沙龙</span>
+                            </a>
+                        </li>
+                        <li class="lastNextList">
+                            <a href="">下一篇:
+                                <span>化能学院举行班主任工作技能培训沙龙</span>
+                            </a>
+                        </li>
+                    </ul> -->
+                    <!-- 底部上下篇 -->
+                </div>
+                <!-- END-rightArticle -->
+                <!-- END-左侧文章内容栏 -->
+
+                <!-- 右侧热门博文 -->
+                <div class="rightHot col-lg-4 col-md-4 col-sm-4" style="margin-top:60px; margin-bottom:20px;">
+                    <div class="newsTitle">
+                        <h3>猜你喜欢</h3>
+                        <a href="">
+                            <span>more+</span>
+                        </a>
+                    </div>
+
+                    <ol class="contentHot">
+                        {volist name="hotres" id="hot"}
+                        <li><span>{$i}</span><a href="{:url('article/index',array('artid'=>$hot.id))}">{$hot.title}</a></li>
+                        {/volist}
+                    </ol>
+                </div>
+                <!-- END-右侧热门博文 -->
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <!-- 页脚 -->
+        {include file="common/footer" /}
+        <!-- END-页脚 -->
+    </footer>
+    <!-- boostrap_js文件 -->
+    <script src="__JS__/jquery-3.3.1.min.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/public.js"></script>
+</body>
+
+</html>

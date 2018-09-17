@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {include file="common/cssInfo" /}
+    <link rel="stylesheet" href="__CSS__/otherPage.css">
+
+    <!-- 网站ico -->
+    <!-- <link rel="icon" href="img/favicon.ico" /> -->
+    <title>{$confres.sitename}</title>
+</head>
+
+<body>
+    <header>
+        <!-- 导航栏 -->
+        {include file="common/nav" /}
+        <!-- END-导航栏 -->
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class=" col-lg-8 col-md-8 col-sm-8">
+                    <div class="newsTitle" style="margin-top:60px;">
+                        <h3>{$posArr.catename}</h3>
+                    </div>
+                    <ul class="hotBlogContent">
+                        {volist name="artres" id="art"}
+                        <li class="hotList">
+                                <a href="{:url('article/index',array('artid'=>$art.id))}">
+                                <h3>{$art.title}</h3>
+                                <p>{$art.desc}</p>
+                            </a>
+                            <span class="author">
+                                <a href="">{$art.author}</a>
+                            </span>
+                            <span class="hottime">{$art.time|date="Y.m.d",###}</span>
+                            <ul class="hotRight">
+                                <li>
+                                    <a href="">{$art.click}</a>阅读</li>
+                                <li>
+                                    <a href="">{$art.comment}</a>评论</li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        {/volist}
+                    </ul>
+                    <div style="margin:0 auto;">
+                        {$page}
+                    </div>
+                </div>
+
+                <!-- 右侧热门博文 -->
+                <div class="rightHot col-lg-4 col-md-4 col-sm-4" style="margin-top:60px; margin-bottom:20px;">
+                    <div class="newsTitle">
+                        <h3>猜你喜欢</h3>
+                        <a href="">
+                            <span>more+</span>
+                        </a>
+                    </div>
+
+                    <ol class="contentHot">
+                        {volist name="$hotres" id="hot"}
+                        <li><span><?php echo $i ?></span><a href="{:url('article/index',array('artid'=>$hot.id))}">{$hot.title}</a></li>
+                        {/volist}
+                    </ol>
+                </div>
+                <!-- END-右侧热门博文 -->
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <!-- 页脚 -->
+        {include file="common/footer" /}
+        <!-- END-页脚 -->
+    </footer>
+    <!-- boostrap_js文件 -->
+    <script src="__JS__/jquery-3.3.1.min.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/public.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {include file="common/cssInfo" /}
+
+    <title>列表页</title>
+
+</head>
+
+<body>
+    <header>
+        {include file="common/nav" /}
+    </header>
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            <!-- 侧边栏 -->
+            {include file="common/sidebar" /}
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">系统</a>
+                        </li>
+                        <li class="active">配置管理</li>
+                    </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+                    <a href="{:url('add')}">
+                        <button type="button" tooltip="添加配置" class="btn btn-sm btn-azure btn-addon">
+                            <i class="fa fa-plus"></i> Add
+                        </button>
+                    </a>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget">
+                                <div class="widget-body">
+                                    <div class="flip-scroll">
+                                        <form action="" method="post">
+                                            <table class="table table-bordered table-hover">
+                                                <thead class="">
+                                                    <tr>
+                                                        <th class="text-center">ID</th>
+                                                        <th class="text-center">排序</th>
+                                                        <th class="text-center">英文名称</th>
+                                                        <th class="text-center">中文名称</th>
+                                                        <th class="text-center">配置类型</th>
+                                                        <th class="text-center" width="20%">操作</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {volist name="confres" id="conf"}
+                                                    <tr>
+                                                        <td align="center">{$conf.id}</td>
+                                                        <td align="center">
+                                                            <input type="text" name="{$conf.id}" placeholder="" value="{$conf.sort}" style="width:50px; text-align:center;" />
+                                                        </td>
+                                                        <td align="center">{$conf.cnname}</td>
+                                                        <td align="center">{$conf.enname}</td>
+                                                        <td align="center">
+                                                            {switch $conf.type }
+                                                                {case 1}文本框{/case}
+                                                                {case 2}文本域{/case}
+                                                                {case 3}单选按钮{/case}
+                                                                {case 4}复选按钮{/case}
+                                                                {case 5}下拉菜单{/case}
+                                                                {default /}未知类型
+                                                            {/switch}
+                                                        </td>
+                                                        <td align="center">
+                                                            <a href="{:url('edit',array('id'=>$conf.id))}" class="btn btn-primary btn-sm shiny">
+                                                                <i class="fa fa-edit"></i> 编辑
+                                                            </a>
+                                                            <a href="#" onClick="warning('确实要删除吗', '{:url('del',array('id'=>$conf.id))}')"
+                                                                class="btn btn-danger btn-sm shiny">
+                                                                <i class="fa fa-trash-o"></i> 删除
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    {/volist}
+                                                </tbody>
+                                            </table>
+                                            <div>
+                                                <input type="submit" value="排序" class="btn btn-primary btn-md shiny" style="margin-left:202px; margin-top:10px;"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div style="margin-top:20px;">
+                                        {$page}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+    </div>
+
+    <!-- 引入js -->
+    {include file="common/jsInfo" /}
+</body>
+
+</html>
