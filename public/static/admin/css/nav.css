@@ -1,0 +1,43 @@
+.navStyle{
+    height: 60px;
+    min-height: 60px;
+}
+
+.navStyle .navbar-inner{
+    background: #202b6b;
+    min-height: 60px;
+    padding-top: 15px;
+}
+
+.navStyle .navbar-brand small img{
+    width: 100%;
+    height: auto;
+}
+
+.navStyle .navbar-inner .navbar-header .navbar-account .account-area .login-area{
+    padding-top:18px !important;
+}
+
+.adminLogin{
+    font-size: 18px;
+    color: #fff;
+    line-height: 35px;
+    margin-left: 15px;
+}
+
+/*页脚*/
+.foot{
+    height: 40px;
+    background: #202b6b;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.foot p{
+    font-size: 15px;
+    color: #fff;
+    line-height: 40px;
+}
+/*END-页脚*/

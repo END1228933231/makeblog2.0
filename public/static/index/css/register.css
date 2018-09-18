@@ -1,0 +1,48 @@
+.register{
+	position: relative;
+	width: 550px;
+}
+
+.register .row{
+	position: absolute;
+	margin: 0 auto;
+	top:40px;
+}
+
+.register button{
+	width: 160px;
+	height: 40px;
+	font-size: 16px;
+}
+
+#exampleInputFile{
+
+}
+
+.register input:focus{
+	outline: none;
+}
+
+.register .row>div{
+	position: relative;
+}
+
+.hint{
+	color: red;
+	font-size: 14px;
+	font-weight: normal;
+	position: absolute;
+	top: 31px;
+	right: -100px;
+	text-align: left;
+}
+
+.register button:hover{
+	background: #202b6b;
+}
+
+.foot{
+	position: absolute;
+	bottom: 0;
+}
+

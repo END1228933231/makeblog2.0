@@ -1,0 +1,137 @@
+/* ==================内容页+独立页================== */
+.cententTopMar{
+    padding:60px 0;
+}
+
+/* 左侧文章内容栏 */
+.leftArticle{
+}
+
+.leftArticle h3{
+    font-size: 28px;
+    color: #333;
+    line-height: 1;
+    text-align: center;
+}
+
+.xqAuthor{
+    margin-top: 19px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-size:0;
+}
+
+.xqAuthor li{
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.xqAuthor li:last-child{
+    margin-right: 0;
+}
+
+.articleCentent{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.articleCentent p{
+    font-size: 16px;
+    color: #666;
+    line-height: 30px;
+    text-indent: 2em;
+    text-align: justify;
+}
+
+/* END-左侧文章内容栏 */
+
+/* 右侧热门博文 */
+
+/* END-右侧热门博文 */
+.contentHot{
+    margin-top: 20px;
+}
+
+.contentHot li{
+    font-size: 14px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contentHot li span{
+    font-size: 16px;
+    font-weight: bold;
+    color:rgba(32, 43, 107, 0.5);
+    margin-right: 10px;
+}
+
+.contentHot li:first-child span{
+    font-size: 18px;
+    color: #e64830;
+}
+
+.contentHot li:nth-child(2) span{
+    font-size: 17px;
+    color: #f48a37;
+}
+
+.contentHot li:nth-child(3) span{
+    font-size: 18px;
+    color: #f0b500;
+}
+
+.contentHot li:nth-child(n+4) span{
+    /*color: #666;*/
+    font-weight: normal;
+}
+
+.contentHot li a{
+    color: #666;
+}
+
+.contentHot li a:hover{
+    color: dodgerblue;
+}
+
+/* 底部上下篇 */
+.lastNextActicle{
+    /* margin-top: 20px; */
+}
+
+.lastNextList{
+    margin-top: 18px;
+}
+
+.lastNextList a{
+    font-size: 14px;
+    color:#666;
+    line-height: 1;
+}
+
+.lastNextList a:hover{
+    color:#C7000B;
+}
+
+.lastNextList a span{
+
+}
+/* END-底部上下篇 */
+
+/* ==================END-内容页+独立页================== */
+
+/* ==================独立页================== */
+.pageArticle{
+    padding-top: 30px;
+    padding-bottom: 22px;
+}
+.pageArticle .articleCentent{
+    border:0;
+    margin-top: 20px;
+    padding-bottom: 0px;
+}
+
+
+/* ==================END-独立页================== */
